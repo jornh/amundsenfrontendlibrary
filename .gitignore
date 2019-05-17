@@ -11,6 +11,7 @@ venv/
 venv3/
 .cache/
 build/
+docs/_build
 .idea/
 .coverage
 .mypy_cache
