@@ -20,7 +20,7 @@ def log_generic_action() -> Response:
     Log a generic action on the frontend. Captured parameters include
 
     :param command: Req. User Action E.g. click, scroll, hover, search, etc
-    :param target_id: Req. Unique identifier for the object acted upon E.g. tag::payments, table::schema.database
+    :param target_id: Req. Unique identifier for the object acted upon E.g. `tag::payments`, `table::schema.database`
     :param target_type: Opt. Type of element event took place on (button, link, tag, icon, etc)
     :param label: Opt. Displayed text for target
     :param location: Opt. Where the the event occurred

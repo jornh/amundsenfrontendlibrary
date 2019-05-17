@@ -44,9 +44,10 @@ def _get_table_key(args: Dict) -> str:
 
 @metadata_blueprint.route('/popular_tables', methods=['GET'])
 def popular_tables() -> Response:
-    """
-    call the metadata service endpoint to get the current popular tables
+    """call the metadata service endpoint to get the current popular tables.
+
     :return: a json output containing an array of popular table metadata as 'popular_tables'
+    :rtype: Response
 
     Schema Defined Here:
     https://github.com/lyft/amundsenmetadatalibrary/blob/master/metadata_service/api/popular_tables.py
@@ -92,14 +93,17 @@ def popular_tables() -> Response:
 
 @metadata_blueprint.route('/table', methods=['GET'])
 def get_table_metadata() -> Response:
-    """
-    call the metadata service endpoint and return matching results
-    :return: a json output containing a table metdata object as 'tableData'
+    """call the metadata service endpoint and return matching results
+
 
     Schema Defined Here: https://github.com/lyft/amundsenmetadatalibrary/blob/master/metadata_service/api/table.py
     TODO: Define type for this
 
     TODO: Define an interface for envoy_client
+
+    :return: a json output containing a table metadata object as 'tableData'
+
+
     """
     try:
         table_key = _get_table_key(request.args)
@@ -464,6 +468,12 @@ def update_table_tags() -> Response:
 
 @metadata_blueprint.route('/user', methods=['GET'])
 def get_user() -> Response:
+    """User profile page.
+
+    .. :quickref: User; Get Profile Page
+
+    my docco here
+    """
 
     @action_logging
     def _log_get_user(*, user_id: str) -> None:

@@ -56,6 +56,15 @@ def _validate_search_term(*, search_term: str, page_index: int) -> Optional[Resp
 
 @search_blueprint.route('/table', methods=['GET'])
 def search_table() -> Response:
+    """Search for `Table`
+    
+    .. http:get:: /table
+    :query string query: Endpoint takes a "query" parameter
+    :query int page_index: Endpoint takes a "page_index" parameter, optional 
+    :return: [description]
+    :rtype: Response
+    :http:statuscode:`500`
+    """
     search_term = get_query_param(request.args, 'query', 'Endpoint takes a "query" parameter')
     page_index = get_query_param(request.args, 'page_index', 'Endpoint takes a "page_index" parameter')
 
@@ -69,6 +78,13 @@ def search_table() -> Response:
 
 @search_blueprint.route('/user', methods=['GET'])
 def search_user() -> Response:
+    """Search for User
+    
+    .. http:get:: /user/(user_id)
+    :return: [description]
+    :rtype: Response
+    :http:statuscode:`501 Not Implemented`
+    """
     return make_response(jsonify({'msg': 'Not implemented'}), HTTPStatus.NOT_IMPLEMENTED)
 
 
