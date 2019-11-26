@@ -42,6 +42,18 @@
    width: auto;
   }
 }
+.lineage-jobs {
+  stroke: $stroke;
+  fill: rgb(95, 93, 93);
+  stroke-width: 1.5px;
+  // width:auto;
+  color: $text-primary;
+
+  div {
+   color: $text-primary;
+   width: auto;
+  }
+}
 .nodes {
   // fill: none;
   // width: auto;
