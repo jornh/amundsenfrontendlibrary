@@ -103,6 +103,19 @@ export class LineageButton extends React.Component<LineageButtonProps, LineageBu
           labelType: 'html',
           class: 'lineage-nodes',
         },
+        // jornh additions
+        {
+          id: 'schema.table0',
+          label: '<div><h4>schema.table0</h4></div>',
+          labelType: 'html',
+          class: 'lineage-jobs',
+        },
+        {
+          id: 'schema.table22',
+          label: '<div><h4>schema.table22</h4></div>',
+          labelType: 'html',
+          class: 'lineage-nodes',
+        },
       ],
       links: [
         { source: 'schema.main_table', target: 'schema.table1', label: '' },
@@ -112,6 +125,10 @@ export class LineageButton extends React.Component<LineageButtonProps, LineageBu
         { source: 'schema.main_table', target: 'schema.table5', label: '' },
         { source: 'schema.main_table', target: 'schema.table6', label: '' },
         { source: 'schema.main_table', target: 'schema.table7', label: '' },
+        // jornh additions
+        { source: 'schema.table2', target: 'schema.table22', label: '' },
+        { source: 'schema.table0', target: 'schema.main_table', label: '' },
+
       ]
     };
 
@@ -125,10 +142,10 @@ export class LineageButton extends React.Component<LineageButtonProps, LineageBu
         nodes={dummyData.nodes}
         links={dummyData.links}
         rankdir='LR'
-        width='900'
-        height='600'
+        width='950'
+        height='650'
         animate={250}
-        fitBoundaries={true}
+        fitBoundaries={false}
         zoomable={true}
         onNodeClick={e => console.log(e)}
         onRelationshipClick={e => console.log(e)}
